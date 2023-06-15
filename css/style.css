@@ -1,0 +1,262 @@
+/*  Fallback message */
+
+.fallback-message {
+    font-family: sans-serif;
+    line-height: 1.3;
+
+    width: 780px;
+    padding: 10px 10px 0;
+    margin: 20px auto;
+
+    border: 1px solid #E4C652;
+    border-radius: 10px;
+    background: #EEDC94;
+}
+
+.fallback-message p {
+    margin-bottom: 10px;
+}
+
+.impress-supported .fallback-message {
+    display: none;
+}
+
+
+/* Body & steps */
+body {
+    font-family: 'OpenSans', sans-serif;
+    min-height: 740px;
+
+    background: #00000f;
+    color: rgb(102, 102, 102);
+}
+
+.step {
+    position: relative;
+    width: 700px;
+    height: 700px;
+    padding: 40px 60px;
+    margin: 20px auto;
+
+    box-sizing:         border-box;
+
+    line-height: 1.5;
+
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 40pt;
+    letter-spacing: -1px;
+
+}
+
+.notes {
+    display: none;
+}
+
+/*
+    Make inactive steps a little bit transparent.
+*/
+.impress-enabled .step {
+    margin: 0;
+    opacity: 0.1;
+    transition:         opacity 1s;
+}
+
+.impress-enabled .step.active { opacity: 1 }
+
+
+/* Content */
+
+h1, 
+h2, 
+h3 {
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+    text-align: center;
+}
+
+p {
+    margin: 0.7em;
+}
+
+li {
+    margin: 0.2em;    
+}
+
+/* Highlight.js used for coloring pre > code blocks. */
+pre > code {
+    font-size: 14px;
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+/* Inline code, no Highlight.js */
+code {
+    font-family: "Cutive mono","Courier New", monospace;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+    padding: 0 0.1em;
+    background: rgba(200,200,200,0.2);
+    text-shadow: -1px 1px 2px rgba(100,100,100,0.9);
+    border-radius: 0.2em;
+    border-bottom: 1px solid rgba(100,100,100,0.2);
+    border-left:   1px solid rgba(100,100,100,0.2);
+
+    transition:         0.5s;
+}
+a:hover,
+a:focus {
+    background: rgba(200,200,200,1);
+    text-shadow: -1px 1px 2px rgba(100,100,100,0.5);
+}
+
+blockquote {
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: 400;    
+}
+
+em {
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .3);    
+}
+
+strong {
+    text-shadow: -1px 1px 2px rgba(100,100,100,0.5);
+}
+
+q {
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: 400;    
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .3);
+}
+
+strike {
+    opacity: 0.7;
+}
+
+small {
+    font-size: 0.4em;
+}
+
+
+/*
+  This version of impress.js supports plugins, and in particular, a UI toolbar
+  plugin that allows easy navigation between steps and autoplay.
+*/
+.impress-enabled div#impress-toolbar {
+    position: fixed;
+    right: 1px;
+    bottom: 1px;
+    opacity: 0.6;
+    z-index: 10;
+}
+.impress-enabled div#impress-toolbar > span {
+    margin-right: 10px;
+}
+
+/*
+    With help from the mouse-timeout plugin, we can hide the toolbar and
+    have it show only when you move/click/touch the mouse.
+*/
+body.impress-mouse-timeout div#impress-toolbar {
+    display: none;
+}
+
+/*
+    In fact, we can hide the mouse cursor itself too, when mouse isn't used.
+*/
+body.impress-mouse-timeout {
+    cursor: none;
+}
+
+
+
+/* Progress bar */
+.impress-progressbar {
+  position: absolute;
+  right: 118px;
+  bottom: 1px;
+  left: 118px;
+  border-radius: 7px;
+  border: 2px solid rgba(100, 100, 100, 0.2);
+}
+.impress-progressbar DIV {
+  width: 0;
+  height: 2px;
+  border-radius: 5px;
+  background: rgba(75, 75, 75, 0.4);
+  transition: width 1s linear;
+}
+.impress-progress {
+  position: absolute;
+  left: 59px;
+  bottom: 1px;
+  text-align: left;
+  font-size: 10pt;
+  opacity: 0.6;
+}
+
+/* Help popup plugin */
+.impress-enabled #impress-help {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);
+    color: #EEEEEE;
+    font-size: 80%;
+    position: fixed;
+    left: 2em;
+    bottom: 2em;
+    width: 24em;
+    border-radius: 1em;
+    padding: 1em;
+    text-align: center;
+    z-index: 100;
+    font-family: Verdana, Arial, Sans;
+}
+.impress-enabled #impress-help td {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+
+/* Styles specific to each step */
+
+#overview2 {
+    font-size: 20pt;
+    padding-left: 200px;
+    text-align: right;
+}
+
+.impress-enabled                          { pointer-events: none }
+.impress-enabled #impress                 { pointer-events: auto }
+.impress-enabled #impress-toolbar         { pointer-events: auto }
+.impress-enabled #impress-console-button  { pointer-events: auto }
+
+#thanks {
+    width: 700px;
+    padding-bottom: 300px;
+
+    /* Yoda Icon :: Pixel Art from Star Wars http://www.pixeljoint.com/pixelart/1423.htm */
+    background-image: url(data:image/png;base64,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);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+}
+
+.overview {
+    background-color: transparent!important;
+    border: none;
+    box-shadow: none;
+    pointer-events: none;
+    display: none;
+}
+.overview.active {
+    display: block;
+    pointer-events: auto;
+}
